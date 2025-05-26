@@ -349,4 +349,98 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+
+  // Back to Top Button Functionality
+  const backToTopBtn = document.getElementById("back-to-top");
+  if (backToTopBtn) {
+    // Show/hide the button based on scroll position
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
+      }
+    });
+
+    // Scroll to top when clicked
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
+
+  // Newsletter Form Submission
+  const newsletterForm = document.getElementById("newsletter-form");
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      const emailInput = document.getElementById("newsletter-email");
+      const email = emailInput.value.trim();
+      
+      if (email && isValidEmail(email)) {
+        // Simulate submission to a server
+        showNotification("Thank you for subscribing to our newsletter!", "success");
+        emailInput.value = "";
+        
+        // In a real application, you would send this data to your backend
+        console.log("Newsletter subscription:", email);
+      } else {
+        showNotification("Please enter a valid email address.", "error");
+      }
+    });
+  }
+  
+  // Helper Functions
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+  
+  function showNotification(message, type) {
+    // Create notification element
+    const notification = document.createElement("div");
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    
+    // Style the notification
+    notification.style.position = "fixed";
+    notification.style.bottom = "20px";
+    notification.style.right = "20px";
+    notification.style.padding = "12px 20px";
+    notification.style.borderRadius = "4px";
+    notification.style.color = "white";
+    notification.style.fontSize = "14px";
+    notification.style.zIndex = "1000";
+    notification.style.transform = "translateY(100px)";
+    notification.style.opacity = "0";
+    notification.style.transition = "all 0.3s ease";
+    
+    // Set color based on type
+    if (type === "success") {
+      notification.style.backgroundColor = "#4caf50";
+    } else if (type === "error") {
+      notification.style.backgroundColor = "#f44336";
+    }
+    
+    // Add to DOM
+    document.body.appendChild(notification);
+    
+    // Show notification
+    setTimeout(() => {
+      notification.style.transform = "translateY(0)";
+      notification.style.opacity = "1";
+    }, 10);
+    
+    // Remove after delay
+    setTimeout(() => {
+      notification.style.transform = "translateY(100px)";
+      notification.style.opacity = "0";
+      setTimeout(() => {
+        notification.remove();
+      }, 300);
+    }, 4000);
+  }
 });
