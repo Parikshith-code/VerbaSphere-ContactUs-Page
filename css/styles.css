@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #000;
+  color: #d4af37;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+header {
+  background-color: #111;
+  padding: 1rem 0;
+  border-bottom: 2px solid #d4af37;
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.logo-gold {
+  color: #d4af37;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: #d4af37;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active-link {
+  background-color: #d4af37;
+  color: #000;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+/* Main Content */
+main {
+  flex: 1;
+  padding: 3rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.container {
+  padding: 0 2rem;
+}
+
+.active-page-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #d4af37;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.contact-card {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+.contact-card h3 {
+  color: #d4af37;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-card .icon {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.contact-card p {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.contact-card a {
+  color: #d4af37;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+
+/* Chatbot Section */
+.chatbot-section {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  border-radius: 15px;
+  border: 2px solid #d4af37;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+}
+
+.chatbot-section h2 {
+  text-align: center;
+  color: #d4af37;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.chatbox {
+  height: 300px;
+  overflow-y: auto;
+  background: #000;
+  border: 1px solid #d4af37;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  max-width: 70%;
+  animation: fadeIn 0.3s ease;
+}
+
+.bot-message {
+  background: linear-gradient(135deg, #333, #444);
+  color: #d4af37;
+  align-self: flex-start;
+  border: 1px solid #d4af37;
+}
+
+.user-message {
+  background: linear-gradient(135deg, #d4af37, #b8941f);
+  color: #000;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.chat-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #d4af37;
+  border-radius: 5px;
+  background: #111;
+  color: #d4af37;
+  font-size: 1rem;
+}
+
+.chat-form input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.chat-form button {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #d4af37, #b8941f);
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.chat-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Contact Form */
+.contact-form-section {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  border-radius: 15px;
+  border: 2px solid #d4af37;
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+}
+
+.contact-form-section h2 {
+  text-align: center;
+  color: #d4af37;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #d4af37;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #d4af37;
+  border-radius: 5px;
+  background: #111;
+  color: #d4af37;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  border-color: #fff;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #d4af37, #b8941f);
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 2px solid #d4af37;
+  margin-top: auto;
+}
+
+footer p {
+  color: #d4af37;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .active-page-title {
+    font-size: 2rem;
+  }
+  
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+  
+  .chat-form {
+    flex-direction: column;
+  }
+}
+
