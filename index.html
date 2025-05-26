@@ -1,112 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact Us - VerbaSphere</title>  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="logo">
-        <span class="logo-gold">V</span>erba<span class="logo-gold">S</span>phere
-      </div>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="../community/index.html">Community Blogs</a>
-        <a href="../write-blog/index.html">Write Blog</a>
-        <a href="../contact/index.html" class="active-link">Contact</a>
-        <a href="../about/index.html">About</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-  <main>
-    <div class="container">
-      <h1 class="active-page-title">Contact Us</h1>
-      
-      <div class="contact-intro">
-        <p>We'd love to hear from you! Whether you have questions, feedback, or just want to say hello, 
-        our team is here to help. Choose your preferred way to get in touch with VerbaSphere.</p>
-      </div>
-
-      <!-- Contact Methods -->
-      <div class="contact-methods">
-        <div class="contact-card">
-          <div class="icon">📧</div>
-          <h3>Email Us</h3>
-          <p>Get in touch via email</p>
-          <p><a href="mailto:contact@verbasphere.com">contact@verbasphere.com</a></p>
-          <p><a href="mailto:support@verbasphere.com">support@verbasphere.com</a></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us - VerbaSphere</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💬</text></svg>"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <meta
+      name="description"
+      content="Get in touch with the VerbaSphere team through various contact methods. We're here to help with any questions or feedback."
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <span class="logo-gold">V</span>erba<span class="logo-gold">S</span
+          >phere
         </div>
-
-        <div class="contact-card">
-          <div class="icon">💬</div>
-          <h3>Live Chat</h3>
-          <p>Chat with our support team</p>
-          <p>Available 24/7</p>
-          <p>Response time: 2-5 minutes</p>
-        </div>
-
-        <div class="contact-card">
-          <div class="icon">🌐</div>
-          <h3>Social Media</h3>
-          <p>Follow us on social platforms</p>
-          <p><a href="#">Twitter: @VerbaSphere</a></p>
-          <p><a href="#">LinkedIn: VerbaSphere</a></p>
+        <nav>
+          <a href="../index.html">Home</a>
+          <a href="../community/index.html">Community Blogs</a>
+          <a href="../write-blog/index.html">Write Blog</a>
+          <a href="../contact/index.html" class="active-link">Contact</a>
+          <a href="../about/index.html">About</a>
+        </nav>
+        <div class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
         </div>
       </div>
+    </header>
 
-      <!-- Chatbot Section -->
-      <div class="chatbot-section">
-        <h2>💬 Live Support Chat</h2>
-        <div class="chatbox" id="chatbox">
-          <div class="message bot-message">Hi there 👋! How can I help you today?</div>
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <div class="container">
+        <h1 class="active-page-title">Contact Us</h1>
+        <p class="hero-subtitle">We're here to listen, help, and collaborate</p>
+        <div class="hero-decoration">
+          <span>📱</span>
+          <span>✉️</span>
+          <span>🌐</span>
+          <span>💬</span>
         </div>
-        <form class="chat-form" id="chat-form">
-          <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
-          <button type="submit">Send</button>
-        </form>
       </div>
+    </section>
 
-      <!-- Contact Form -->
-      <div class="contact-form-section">
-        <h2>📝 Send us a Message</h2>
-        <form id="contact-form">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
+    <!-- Main Content -->
+    <main>
+      <div class="container">
+        <div class="contact-intro">
+          <h2>Reach Out to VerbaSphere</h2>
+          <p>
+            We'd love to hear from you! Whether you have questions about our
+            platform, need technical support, want to provide feedback, or are
+            interested in partnerships, our friendly team is here to help.
+            Choose your preferred way to get in touch with VerbaSphere below.
+          </p>
+
+          <div class="contact-badges">
+            <span class="badge">Quick Response</span>
+            <span class="badge">24/7 Support</span>
+            <span class="badge">Multilingual Team</span>
+            <span class="badge">Privacy Focused</span>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
+        <!-- Contact Methods -->
+        <section class="contact-methods-section">
+          <h2 class="section-title">
+            <span class="section-icon">📞</span> Contact Methods
+          </h2>
+          <div class="contact-methods">
+            <div class="contact-card">
+              <div class="icon">📧</div>
+              <h3>Email Us</h3>
+              <p class="card-description">Get a thorough response via email</p>
+              <ul class="contact-list">
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:contact@verbasphere.com"
+                    >contact@verbasphere.com</a
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-headset"></i>
+                  <a href="mailto:support@verbasphere.com"
+                    >support@verbasphere.com</a
+                  >
+                </li>
+                <li>
+                  <i class="fas fa-briefcase"></i>
+                  <a href="mailto:business@verbasphere.com"
+                    >business@verbasphere.com</a
+                  >
+                </li>
+              </ul>
+              <p class="response-time">Typical response: Within 24 hours</p>
+            </div>
+
+            <div class="contact-card">
+              <div class="icon">💬</div>
+              <h3>Live Chat</h3>
+              <p class="card-description">
+                Chat with our friendly support team
+              </p>
+              <ul class="contact-list">
+                <li><i class="fas fa-clock"></i> Available 24/7</li>
+                <li><i class="fas fa-bolt"></i> Response time: 2-5 minutes</li>
+                <li>
+                  <i class="fas fa-globe"></i> Support in multiple languages
+                </li>
+              </ul>
+              <button class="start-chat-btn">Start Chat Now</button>
+            </div>
+
+            <div class="contact-card">
+              <div class="icon">🌐</div>
+              <h3>Social Media</h3>
+              <p class="card-description">
+                Connect with us on social platforms
+              </p>
+              <ul class="social-links">
+                <li>
+                  <i class="fab fa-twitter"></i>
+                  <a href="https://twitter.com/VerbaSphere" target="_blank"
+                    >Twitter: @VerbaSphere</a
+                  >
+                </li>
+                <li>
+                  <i class="fab fa-linkedin"></i>
+                  <a
+                    href="https://linkedin.com/company/verbasphere"
+                    target="_blank"
+                    >LinkedIn: VerbaSphere</a
+                  >
+                </li>
+                <li>
+                  <i class="fab fa-instagram"></i>
+                  <a href="https://instagram.com/verbasphere" target="_blank"
+                    >Instagram: @VerbaSphere</a
+                  >
+                </li>
+                <li>
+                  <i class="fab fa-facebook"></i>
+                  <a href="https://facebook.com/VerbaSphere" target="_blank"
+                    >Facebook: VerbaSphere</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-card">
+              <div class="icon">📞</div>
+              <h3>Phone Support</h3>
+              <p class="card-description">Speak directly with our team</p>
+              <ul class="contact-list">
+                <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                <li><i class="fas fa-clock"></i> Mon-Fri: 9am - 6pm EST</li>
+                <li>
+                  <i class="fas fa-headset"></i> Priority support for members
+                </li>
+              </ul>
+              <p class="response-time">Typical wait: Under 5 minutes</p>
+            </div>
           </div>
+        </section>
 
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required>
+        <!-- FAQ Section -->
+        <section class="faq-section">
+          <h2 class="section-title">
+            <span class="section-icon">❓</span> Frequently Asked Questions
+          </h2>
+          <div class="faq-container">
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>How quickly will I receive a response?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  We aim to respond to all inquiries within 24 hours. Live chat
+                  typically has response times of 2-5 minutes, while email
+                  responses may take up to one business day depending on the
+                  complexity of your question.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Do you offer technical support on weekends?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Yes! Our live chat support is available 24/7, including
+                  weekends and holidays. Email support operates with reduced
+                  staff on weekends but urgent matters are still addressed.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>How can I report a bug or suggest a feature?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  You can report bugs or suggest features through our contact
+                  form by selecting "Bug Report" or "Feature Request" in the
+                  subject dropdown. Our development team reviews these
+                  submissions regularly.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3>Are there support options for enterprise clients?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>
+                  Absolutely! Enterprise clients receive dedicated account
+                  managers and priority support channels. Please contact our
+                  business team at business@verbasphere.com to learn more about
+                  our enterprise support packages.
+                </p>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
+        <!-- Chatbot Section -->
+        <section class="chatbot-section">
+          <h2 class="section-title">
+            <span class="section-icon">💬</span> Live Support Chat
+          </h2>
+          <div class="chatbot-container">
+            <div class="chatbot-header">
+              <div class="chatbot-agent">
+                <div class="agent-avatar">VS</div>
+                <div class="agent-info">
+                  <p class="agent-name">VerbaBot</p>
+                  <p class="agent-status">Online</p>
+                </div>
+              </div>
+            </div>
+            <div class="chatbox" id="chatbox">
+              <div class="message bot-message">
+                <div class="message-content">
+                  <p>
+                    Hi there 👋! I'm VerbaBot, your virtual assistant at
+                    VerbaSphere.
+                  </p>
+                  <p>How can I help you today?</p>
+                </div>
+                <span class="message-time">Just now</span>
+              </div>
+            </div>
+            <form class="chat-form" id="chat-form">
+              <input
+                type="text"
+                id="user-input"
+                placeholder="Type your message..."
+                autocomplete="off"
+                required
+              />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+            <div class="chatbot-suggestions">
+              <button
+                class="suggestion-btn"
+                data-query="How do I create a blog?"
+              >
+                How do I create a blog?
+              </button>
+              <button class="suggestion-btn" data-query="Subscription plans">
+                Subscription plans
+              </button>
+              <button class="suggestion-btn" data-query="Speak to human agent">
+                Speak to human agent
+              </button>
+            </div>
           </div>
+        </section>
 
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+        <!-- Contact Form -->
+        <section class="contact-form-section">
+          <h2 class="section-title">
+            <span class="section-icon">📝</span> Send us a Message
+          </h2>
+          <div class="form-container">
+            <div class="form-intro">
+              <h3>Get in Touch</h3>
+              <p>
+                Fill out the form below and we'll get back to you as soon as
+                possible. All fields marked with * are required.
+              </p>
+            </div>
+            <form id="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name *</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" />
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">Subject *</label>
+                  <select id="subject" name="subject" required>
+                    <option value="" disabled selected>
+                      Please select a topic
+                    </option>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Technical Support</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="bug">Bug Report</option>
+                    <option value="feature">Feature Request</option>
+                    <option value="business">Business Partnership</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Please provide as much detail as possible to help us assist you better..."
+                ></textarea>
+                <div class="character-count">
+                  <span id="char-count">0</span>/500 characters
+                </div>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <input type="checkbox" id="newsletter" name="newsletter" />
+                <label for="newsletter"
+                  >Subscribe to our newsletter for updates and tips</label
+                >
+              </div>
+
+              <div class="form-group checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required />
+                <label for="terms"
+                  >I agree to the
+                  <a href="../terms/index.html">Terms of Service</a> and
+                  <a href="../privacy/index.html">Privacy Policy</a> *</label
+                >
+              </div>
+
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- Office Locations -->
+        <section class="locations-section">
+          <h2 class="section-title">
+            <span class="section-icon">🏢</span> Our Offices
+          </h2>
+          <div class="locations-grid">
+            <div class="location-card">
+              <div class="location-icon">🗽</div>
+              <h3>New York</h3>
+              <p>350 Fifth Avenue</p>
+              <p>New York, NY 10118</p>
+              <p>United States</p>
+              <p><i class="fas fa-phone"></i> +1 (212) 555-7890</p>
+            </div>
+
+            <div class="location-card">
+              <div class="location-icon">🇬🇧</div>
+              <h3>London</h3>
+              <p>123 Buckingham Palace Road</p>
+              <p>London, SW1W 9SR</p>
+              <p>United Kingdom</p>
+              <p><i class="fas fa-phone"></i> +44 20 1234 5678</p>
+            </div>
+
+            <div class="location-card">
+              <div class="location-icon">🇸🇬</div>
+              <h3>Singapore</h3>
+              <p>1 Raffles Place</p>
+              <p>Singapore 048616</p>
+              <p>Singapore</p>
+              <p><i class="fas fa-phone"></i> +65 6123 4567</p>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <!-- Footer -->  <footer>
-    <p>© 2025 VerbaSphere. All rights reserved.</p>
-  </footer>
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="section-icon">⭐</span> What Our Users Say About Our
+          Support
+        </h2>
+        <div class="testimonials-slider">
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>
+                "The VerbaSphere team responded to my technical issue within
+                minutes. Their support is truly exceptional and helped me get my
+                blog up and running in no time!"
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">JD</div>
+              <div class="author-info">
+                <p class="author-name">Jane Doe</p>
+                <p class="author-title">Content Creator</p>
+              </div>
+            </div>
+          </div>
 
-  <script src="js/script.js"></script>
-</body>
+          <div class="testimonial">
+            <div class="testimonial-content">
+              <p>
+                "I had a question about customizing my blog's theme. Not only
+                did they help me fix the issue, but they also provided tips to
+                improve my site's performance. 10/10 service!"
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">MS</div>
+              <div class="author-info">
+                <p class="author-name">Michael Smith</p>
+                <p class="author-title">Travel Blogger</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <button class="testimonial-nav prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="testimonial-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="testimonial-nav next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer - Simplified Version -->
+    <footer>
+      <div class="container">
+        <div class="simple-footer">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <span class="logo-gold">V</span>erba<span class="logo-gold"
+                >S</span
+              >phere
+            </div>
+            <p>
+              Empowering voices through the art of blogging and meaningful
+              conversation.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../community/index.html">Community</a>
+            <a href="../write-blog/index.html">Write</a>
+            <a href="../contact/index.html">Contact</a>
+            <a href="../about/index.html">About</a>
+          </div>
+
+          <div class="social-icons">
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 VerbaSphere. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
-
