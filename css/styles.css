@@ -17,6 +17,13 @@
   --input-border: var(--light-gray);
   --chat-bg: var(--light-gray);
 
+  /* Dark theme variables */
+  --dark-bg: #121212;
+  --dark-text: #ffffff;
+  --dark-surface: #1e1e1e;
+  --dark-surface-2: #2d2d2d;
+  --dark-hover: #3d3d3d;
+
   /* Font and effects */
   --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -52,8 +59,7 @@
 body {
   font-family: var(--font-main);
   line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--bg-color);
+
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -159,6 +165,30 @@ nav a:hover {
   display: none;
   font-size: 1.5rem;
   color: var(--primary);
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+  margin-left: 20px;
+}
+
+.theme-toggle button {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle button:hover {
+  background-color: var(--surface);
+}
+
+[data-theme="dark"] .theme-toggle button {
+  color: var(--gold);
 }
 
 /* Hero Section */
@@ -1118,165 +1148,16 @@ footer {
   }
 }
 
-/* Theme Toggle Button */
-.header-controls {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-#theme-toggle {
-  background: transparent;
-  border: none;
-  color: var(--text-color);
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-#theme-toggle:hover {
-  color: var(--accent);
-  transform: scale(1.1);
-}
-
-/* Dark mode specific styles */
-[data-theme="dark"] {
-  color-scheme: dark;
-}
 
 [data-theme="dark"] .contact-card,
 [data-theme="dark"] .faq-item,
 [data-theme="dark"] .chatbot-container,
 [data-theme="dark"] .form-container,
-[data-theme="dark"] .location-card {
-  background-color: var(--card-bg);
-  box-shadow: var(--shadow);
+
 }
 
 [data-theme="dark"] input,
 [data-theme="dark"] select,
 [data-theme="dark"] textarea {
-  background-color: var(--input-bg);
-  border-color: var(--input-border);
-  color: var(--text-color);
-}
 
-[data-theme="dark"] .chat-form input {
-  background-color: var(--input-bg);
-  border-color: var(--input-border);
-  color: var(--text-color);
-}
-
-[data-theme="dark"] .message-content {
-  background-color: var(--chat-bg);
-  color: var(--text-color);
-}
-
-[data-theme="dark"] .user-message .message-content {
-  background-color: var(--accent);
-  color: var(--white);
-}
-
-[data-theme="dark"] header {
-  background-color: var(--card-bg);
-  box-shadow: var(--shadow);
-}
-
-[data-theme="dark"] .suggestion-btn {
-  background-color: var(--chat-bg);
-  color: var(--text-color);
-}
-
-[data-theme="dark"] .suggestion-btn:hover {
-  background-color: var(--accent);
-  color: var(--white);
-}
-
-[data-theme="dark"] .badge {
-  background-color: var(--chat-bg);
-  color: var(--text-color);
-}
-
-[data-theme="dark"] a {
-  color: var(--text-color);
-}
-
-[data-theme="dark"] a:hover {
-  color: var(--accent);
-}
-
-[data-theme="dark"] .footer-links a {
-  color: var(--text-color);
-}
-
-[data-theme="dark"] #newsletter-email {
-  background-color: var(--input-bg);
-  color: var(--text-color);
-}
-
-[data-theme="dark"] .testimonials-section {
-  background-color: var(--card-bg);
-}
-
-[data-theme="dark"] .testimonial {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-[data-theme="dark"] .chatbot-header {
-  background-color: var(--primary);
-}
-
-[data-theme="dark"] .footer-bottom {
-  border-color: var(--border-color);
-}
-
-[data-theme="dark"] .social-icons a {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-[data-theme="dark"] .social-icons a:hover {
-  background-color: var(--accent);
-}
-
-[data-theme="dark"] .recent-post-link {
-  border-color: var(--border-color);
-}
-
-[data-theme="dark"] input::placeholder,
-[data-theme="dark"] textarea::placeholder {
-  color: var(--gray);
-}
-
-[data-theme="dark"] .checkbox-group label {
-  color: var(--text-color);
-}
-
-[data-theme="dark"] select option {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-}
-
-/* Improve dark mode transitions */
-.contact-card,
-.faq-item,
-.chatbot-container,
-.form-container,
-.location-card,
-input,
-select,
-textarea,
-header,
-.suggestion-btn,
-.badge {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Fix contrast for notification system in dark mode */
-[data-theme="dark"] .notification.success {
-  background-color: #2e7d32;
-}
-
-[data-theme="dark"] .notification.error {
-  background-color: #c62828;
 }

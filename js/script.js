@@ -463,19 +463,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Theme toggle functionality
   const themeToggle = document.getElementById("theme-toggle");
-  const themeIcon = themeToggle.querySelector("i");
-  
-  // Check for saved theme preference
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    document.documentElement.setAttribute("data-theme", savedTheme);
-    updateThemeIcon(savedTheme === "dark");
-  } else {
-    // Check system preference
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      document.documentElement.setAttribute("data-theme", "dark");
-      updateThemeIcon(true);
-    }
+
   }
 
   // Theme toggle click handler
@@ -485,19 +473,5 @@ document.addEventListener("DOMContentLoaded", function () {
     
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
-    updateThemeIcon(newTheme === "dark");
-  });
 
-  function updateThemeIcon(isDark) {
-    themeIcon.className = isDark ? "fas fa-sun" : "fas fa-moon";
-  }
-
-  // Watch for system theme changes
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
-    if (!localStorage.getItem("theme")) {
-      const newTheme = e.matches ? "dark" : "light";
-      document.documentElement.setAttribute("data-theme", newTheme);
-      updateThemeIcon(e.matches);
-    }
-  });
 });
