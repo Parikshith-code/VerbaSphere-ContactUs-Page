@@ -186,22 +186,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const messageTextarea = document.getElementById("message");
   const charCount = document.getElementById("char-count");
 
+  // Update character counter color for dark mode
   if (messageTextarea && charCount) {
-    messageTextarea.addEventListener("input", function () {
+    messageTextarea.addEventListener('input', function() {
       const count = this.value.length;
-      charCount.textContent = count;
-
-      // Visual feedback when approaching limit
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      
       if (count > 450) {
-        charCount.style.color = "#ff6b6b";
+        charCount.style.color = isDark ? '#ff5252' : '#ff6b6b';
       } else {
-        charCount.style.color = "";
+        charCount.style.color = isDark ? 'var(--gray)' : '';
       }
+      charCount.textContent = count;
     });
   }
 
   // Contact form validation and submission
   const contactForm = document.getElementById("contact-form");
+
+  // Update form validation styles for dark mode
+  if (contactForm) {
+    const inputs = contactForm.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('invalid', function() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        this.style.borderColor = isDark ? '#ff5252' : '#ff0000';
+      });
+      
+      input.addEventListener('input', function() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        this.style.borderColor = isDark ? 'var(--input-border)' : '';
+      });
+    });
+  }
 
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
@@ -443,4 +460,44 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 300);
     }, 4000);
   }
+
+  // Theme toggle functionality
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = themeToggle.querySelector("i");
+  
+  // Check for saved theme preference
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+    updateThemeIcon(savedTheme === "dark");
+  } else {
+    // Check system preference
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.documentElement.setAttribute("data-theme", "dark");
+      updateThemeIcon(true);
+    }
+  }
+
+  // Theme toggle click handler
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+    updateThemeIcon(newTheme === "dark");
+  });
+
+  function updateThemeIcon(isDark) {
+    themeIcon.className = isDark ? "fas fa-sun" : "fas fa-moon";
+  }
+
+  // Watch for system theme changes
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    if (!localStorage.getItem("theme")) {
+      const newTheme = e.matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      updateThemeIcon(e.matches);
+    }
+  });
 });
