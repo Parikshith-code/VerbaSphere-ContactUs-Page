@@ -443,4 +443,40 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 300);
     }, 4000);
   }
+
+  // Theme toggle functionality
+  const themeToggle = document.getElementById("theme-toggle");
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  
+  // Set initial theme based on user's system preference or stored preference
+  const currentTheme = localStorage.getItem("theme");
+  if (currentTheme) {
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    updateThemeIcon(currentTheme);
+  } else if (prefersDarkScheme.matches) {
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateThemeIcon("dark");
+  }
+
+  // Theme toggle click handler
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+    updateThemeIcon(newTheme);
+  });
+
+  // Update theme icon based on current theme
+  function updateThemeIcon(theme) {
+    const icon = themeToggle.querySelector("i");
+    if (theme === "dark") {
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+    } else {
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-moon");
+    }
+  }
 });
