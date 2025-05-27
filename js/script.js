@@ -186,22 +186,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const messageTextarea = document.getElementById("message");
   const charCount = document.getElementById("char-count");
 
+  // Update character counter color for dark mode
   if (messageTextarea && charCount) {
-    messageTextarea.addEventListener("input", function () {
+    messageTextarea.addEventListener('input', function() {
       const count = this.value.length;
-      charCount.textContent = count;
-
-      // Visual feedback when approaching limit
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      
       if (count > 450) {
-        charCount.style.color = "#ff6b6b";
+        charCount.style.color = isDark ? '#ff5252' : '#ff6b6b';
       } else {
-        charCount.style.color = "";
+        charCount.style.color = isDark ? 'var(--gray)' : '';
       }
+      charCount.textContent = count;
     });
   }
 
   // Contact form validation and submission
   const contactForm = document.getElementById("contact-form");
+
+  // Update form validation styles for dark mode
+  if (contactForm) {
+    const inputs = contactForm.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('invalid', function() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        this.style.borderColor = isDark ? '#ff5252' : '#ff0000';
+      });
+      
+      input.addEventListener('input', function() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        this.style.borderColor = isDark ? 'var(--input-border)' : '';
+      });
+    });
+  }
 
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
@@ -446,16 +463,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Theme toggle functionality
   const themeToggle = document.getElementById("theme-toggle");
-  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-  
-  // Set initial theme based on user's system preference or stored preference
-  const currentTheme = localStorage.getItem("theme");
-  if (currentTheme) {
-    document.documentElement.setAttribute("data-theme", currentTheme);
-    updateThemeIcon(currentTheme);
-  } else if (prefersDarkScheme.matches) {
-    document.documentElement.setAttribute("data-theme", "dark");
-    updateThemeIcon("dark");
+
   }
 
   // Theme toggle click handler
@@ -465,18 +473,5 @@ document.addEventListener("DOMContentLoaded", function () {
     
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
-    updateThemeIcon(newTheme);
-  });
 
-  // Update theme icon based on current theme
-  function updateThemeIcon(theme) {
-    const icon = themeToggle.querySelector("i");
-    if (theme === "dark") {
-      icon.classList.remove("fa-moon");
-      icon.classList.add("fa-sun");
-    } else {
-      icon.classList.remove("fa-sun");
-      icon.classList.add("fa-moon");
-    }
-  }
 });
