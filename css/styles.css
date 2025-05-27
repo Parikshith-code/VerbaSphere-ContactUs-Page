@@ -1,25 +1,47 @@
 /* Global Styles */
 /* Global Styles */
 :root {
-  --black: #121212; /* Pure black */
-  --white: #ffffff; /* Pure white */
-  --gold: #d4af37; /* Rich gold */
-
-  /* Just a few additional variations for necessary UI states */
-  --light-gray: #f5f5f5; /* Light background */
-  --gray: #767676; /* For subtle text */
+  /* Base colors */
+  --black: #121212;
+  --white: #ffffff;
+  --gold: #d4af37;
+  
+  /* Light mode colors */
+  --light-gray: #f5f5f5;
+  --gray: #767676;
+  --bg-color: var(--white);
+  --text-color: var(--black);
+  --card-bg: var(--white);
+  --border-color: #e0e0e0;
+  --input-bg: var(--white);
+  --input-border: var(--light-gray);
+  --chat-bg: var(--light-gray);
 
   /* Font and effects */
   --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
 
-  /* Reference variables to maintain consistency with existing CSS */
+  /* Reference variables */
   --primary: var(--black);
   --secondary: var(--gold);
   --accent: var(--gold);
   --dark: var(--black);
   --light: var(--white);
+}
+
+/* Dark mode colors */
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #f5f5f5;
+  --card-bg: #2d2d2d;
+  --border-color: #3d3d3d;
+  --input-bg: #2d2d2d;
+  --input-border: #3d3d3d;
+  --chat-bg: #2d2d2d;
+  --light-gray: #2d2d2d;
+  --gray: #a0a0a0;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 * {
   margin: 0;
@@ -30,8 +52,9 @@
 body {
   font-family: var(--font-main);
   line-height: 1.6;
-  color: var(--dark);
-  background-color: var(--light);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -1093,4 +1116,167 @@ footer {
   .footer-bottom {
     font-size: 0.8rem;
   }
+}
+
+/* Theme Toggle Button */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#theme-toggle:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] .contact-card,
+[data-theme="dark"] .faq-item,
+[data-theme="dark"] .chatbot-container,
+[data-theme="dark"] .form-container,
+[data-theme="dark"] .location-card {
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .chat-form input {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .message-content {
+  background-color: var(--chat-bg);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .user-message .message-content {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+[data-theme="dark"] header {
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .suggestion-btn {
+  background-color: var(--chat-bg);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .suggestion-btn:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+[data-theme="dark"] .badge {
+  background-color: var(--chat-bg);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] a {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] a:hover {
+  color: var(--accent);
+}
+
+[data-theme="dark"] .footer-links a {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] #newsletter-email {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .testimonials-section {
+  background-color: var(--card-bg);
+}
+
+[data-theme="dark"] .testimonial {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .chatbot-header {
+  background-color: var(--primary);
+}
+
+[data-theme="dark"] .footer-bottom {
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .social-icons a {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .social-icons a:hover {
+  background-color: var(--accent);
+}
+
+[data-theme="dark"] .recent-post-link {
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: var(--gray);
+}
+
+[data-theme="dark"] .checkbox-group label {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] select option {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+/* Improve dark mode transitions */
+.contact-card,
+.faq-item,
+.chatbot-container,
+.form-container,
+.location-card,
+input,
+select,
+textarea,
+header,
+.suggestion-btn,
+.badge {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fix contrast for notification system in dark mode */
+[data-theme="dark"] .notification.success {
+  background-color: #2e7d32;
+}
+
+[data-theme="dark"] .notification.error {
+  background-color: #c62828;
 }
