@@ -9,6 +9,13 @@
   --light-gray: #f5f5f5; /* Light background */
   --gray: #767676; /* For subtle text */
 
+  /* Dark theme variables */
+  --dark-bg: #121212;
+  --dark-text: #ffffff;
+  --dark-surface: #1e1e1e;
+  --dark-surface-2: #2d2d2d;
+  --dark-hover: #3d3d3d;
+
   /* Font and effects */
   --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -32,6 +39,7 @@ body {
   line-height: 1.6;
   color: var(--dark);
   background-color: var(--light);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -136,6 +144,30 @@ nav a:hover {
   display: none;
   font-size: 1.5rem;
   color: var(--primary);
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+  margin-left: 20px;
+}
+
+.theme-toggle button {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle button:hover {
+  background-color: var(--surface);
+}
+
+[data-theme="dark"] .theme-toggle button {
+  color: var(--gold);
 }
 
 /* Hero Section */
@@ -1092,5 +1124,165 @@ footer {
   
   .footer-bottom {
     font-size: 0.8rem;
+  }
+}
+
+/* Dark mode styles */
+[data-theme="dark"] {
+  --background: var(--dark-bg);
+  --text: var(--dark-text);
+  --surface: var(--dark-surface);
+  --surface-2: var(--dark-surface-2);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode specific overrides */
+[data-theme="dark"] .contact-card,
+[data-theme="dark"] .faq-item,
+[data-theme="dark"] .chatbot-container,
+[data-theme="dark"] .form-container,
+[data-theme="dark"] .location-card,
+[data-theme="dark"] .testimonial {
+  background-color: var(--surface);
+  border-color: var(--surface-2);
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background-color: var(--surface);
+  color: var(--text);
+  border-color: var(--surface-2);
+}
+
+[data-theme="dark"] .header {
+  background-color: var(--surface);
+}
+
+[data-theme="dark"] .logo {
+  color: var(--text);
+}
+
+[data-theme="dark"] .contact-badges .badge {
+  background-color: var(--surface-2);
+  color: var(--text);
+}
+
+[data-theme="dark"] .chatbot-container {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .chatbox .bot-message {
+  background-color: var(--surface-2);
+}
+
+[data-theme="dark"] .chatbox .user-message {
+  background-color: var(--gold);
+  color: var(--dark-bg);
+}
+
+[data-theme="dark"] .chat-form input {
+  background-color: var(--surface-2);
+  border-color: var(--surface);
+}
+
+[data-theme="dark"] .suggestion-btn {
+  background-color: var(--surface-2);
+  color: var(--text);
+  border-color: var(--surface);
+}
+
+[data-theme="dark"] .suggestion-btn:hover {
+  background-color: var(--dark-hover);
+}
+
+[data-theme="dark"] .footer {
+  background-color: var(--surface);
+  border-top: 1px solid var(--surface-2);
+}
+
+[data-theme="dark"] .testimonial {
+  background-color: var(--surface);
+}
+
+[data-theme="dark"] .testimonial-author .author-avatar {
+  background-color: var(--surface-2);
+}
+
+[data-theme="dark"] .location-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .submit-btn,
+[data-theme="dark"] .start-chat-btn {
+  background-color: var(--gold);
+  color: var(--dark-bg);
+}
+
+[data-theme="dark"] .submit-btn:hover,
+[data-theme="dark"] .start-chat-btn:hover {
+  background-color: #c19b2e;
+}
+
+[data-theme="dark"] #back-to-top {
+  background-color: var(--surface-2);
+  color: var(--text);
+}
+
+[data-theme="dark"] #back-to-top:hover {
+  background-color: var(--gold);
+  color: var(--dark-bg);
+}
+
+[data-theme="dark"] .faq-toggle {
+  background-color: var(--surface-2);
+  color: var(--text);
+}
+
+[data-theme="dark"] .social-icons a {
+  color: var(--text);
+}
+
+[data-theme="dark"] .social-icons a:hover {
+  color: var(--gold);
+}
+
+[data-theme="dark"] .newsletter-form-group input {
+  background-color: var(--surface-2);
+  border-color: var(--surface);
+}
+
+[data-theme="dark"] .newsletter-btn {
+  background-color: var(--gold);
+  color: var(--dark-bg);
+}
+
+[data-theme="dark"] .newsletter-btn:hover {
+  background-color: #c19b2e;
+}
+
+[data-theme="dark"] a {
+  color: var(--gold);
+}
+
+[data-theme="dark"] a:hover {
+  color: #c19b2e;
+}
+
+[data-theme="dark"] ::placeholder {
+  color: var(--gray);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: var(--dark-bg);
+    --text: var(--dark-text);
+    --surface: var(--dark-surface);
+    --surface-2: var(--dark-surface-2);
   }
 }
